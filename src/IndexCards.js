@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import AndroidIcon from '@material-ui/icons/Android';
 import CommentIcon from '@material-ui/icons/Comment';
 import PortraitIcon from '@material-ui/icons/Portrait';
+import {Link, withRouter} from "react-router-dom";
 
 const styles = theme => ({
   cardRoot: {
@@ -66,17 +66,26 @@ const contactStyle = {
 function IndexCards(props) {
   const { classes } = props;
   const ICard = withStyles(styles)(IndexCard);
-  return (
-    <div className={classes.cardRoot}>
-      <ICard title="About me" onClick={() => window.location.href = '/about.html'} colorStyle={aboutStyle}>
-        <PortraitIcon className={classes.cardImg}/>
-      </ICard>
-      <ICard title="Android apps" onClick={() => window.location.href = '/about.html'} colorStyle={appsStyle}>
+  const AboutCard = withRouter(({ history }) => (
+    <ICard title="About me" colorStyle={aboutStyle} onClick={() => history.push('/about')}>
+      <PortraitIcon className={classes.cardImg}/>
+    </ICard>
+  )),
+    AndroidCard = withRouter(({ history }) => (
+      <ICard title="Android apps" colorStyle={appsStyle} onClick={() => history.push('/about')}>
         <AndroidIcon className={classes.cardImg}/>
       </ICard>
-      <ICard title="Contact" onClick={() => window.location.href = '/about.html'} colorStyle={contactStyle}>
+    )),
+    ContactCard = withRouter(({ history }) => (
+      <ICard title="Contact" colorStyle={contactStyle} onClick={() => history.push('/about')}>
         <CommentIcon className={classes.cardImg}/>
       </ICard>
+    ));
+  return (
+    <div className={classes.cardRoot}>
+      <AboutCard/>
+      <AndroidCard/>
+      <ContactCard/>
     </div>
   )
 }

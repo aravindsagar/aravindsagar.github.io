@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
-import { withStyles } from '@material-ui/core/styles';
-import TitleBar from './TitleBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import IndexCards from './IndexCards';
+import React, { Component } from "react";
+import {Route, Switch} from "react-router-dom";
+import Home from "./Home";
+import About from "./about/About";
+import {withStyles} from "@material-ui/core/styles/index";
 
 const styles = theme => ({
   app: {
     display: "flex",
-    flexFlow: "column",
-    height: "100%",
-    backgroundImage: 'url("/static/images/bg.png")',
-    backgroundRepeat: "repeat",
+    minHeight: "100%",
+    flex: 1,
   }
 });
 
@@ -19,13 +16,12 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <React.Fragment>
-        <CssBaseline />
-        <div className={classes.app}>
-          <TitleBar {...this.props}/>
-          <IndexCards />
-        </div>
-      </React.Fragment>
+      <div className={classes.app}>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/about' component={About}/>
+          </Switch>
+      </div>
     );
   }
 }

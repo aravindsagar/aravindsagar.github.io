@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import {withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
@@ -45,16 +45,16 @@ class TitleBar extends Component {
     this.state = { width: 0, height: 0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
-  
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
-  
+
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
@@ -74,10 +74,10 @@ class TitleBar extends Component {
               <Typography variant="title" color="inherit" className={classes.title}>
                 Aravind Sagar
               </Typography>
-              { this.state.width > 600 && 
-                <Typography variant="subtitle" color="inherit" >
-                  Master's student at University of Illinois, Urbana-Champaign
-                </Typography>
+              { this.state.width > 600 &&
+              <Typography variant="subtitle" color="inherit" >
+                Master's student at University of Illinois, Urbana-Champaign
+              </Typography>
               }
             </div>
 
