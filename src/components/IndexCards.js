@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import AndroidIcon from '@material-ui/icons/Android';
 import CommentIcon from '@material-ui/icons/Comment';
 import PortraitIcon from '@material-ui/icons/Portrait';
-import {Link, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
 const styles = theme => ({
   cardRoot: {

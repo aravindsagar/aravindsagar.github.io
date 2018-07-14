@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Route, Switch} from "react-router-dom";
-import Home from "./Home";
-import About from "./about/About";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import {withStyles} from "@material-ui/core/styles/index";
 
 const styles = theme => ({
@@ -9,6 +9,7 @@ const styles = theme => ({
     display: "flex",
     minHeight: "100%",
     flex: 1,
+    fontFamily: "sans-serif",
   }
 });
 
