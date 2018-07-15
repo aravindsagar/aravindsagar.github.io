@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -16,13 +16,13 @@ const styles = theme => ({
     flexFlow: "row wrap",
     alignItems: "center",
     justifyContent: "center",
+    flex: 1,
   },
 
   card: {
     width: 200,
     height: 200,
     margin: 40,
-    // backgroundColor: '#ffffff',
     boxShadow: '0 3px 10px 0 rgba(0,0,0,.5)',
     borderRadius: 10,
   },
@@ -40,7 +40,7 @@ const styles = theme => ({
 });
 
 function IndexCard(props) {
-  const { classes } = props;
+  const {classes} = props;
   return (
     <ButtonBase className={classes.card} style={props.colorStyle} onClick={props.onClick}>
       <CardContent>
@@ -48,7 +48,7 @@ function IndexCard(props) {
         <Typography variant="headline" component="h2" className={classes.cardText}>
           {props.title}
         </Typography>
-        </CardContent>
+      </CardContent>
     </ButtonBase>
   )
 }
@@ -64,19 +64,19 @@ const contactStyle = {
 };
 
 function IndexCards(props) {
-  const { classes } = props;
+  const {classes} = props;
   const ICard = withStyles(styles)(IndexCard);
-  const AboutCard = withRouter(({ history }) => (
-    <ICard title="About me" colorStyle={aboutStyle} onClick={() => history.push('/about')}>
-      <PortraitIcon className={classes.cardImg}/>
-    </ICard>
-  )),
-    AndroidCard = withRouter(({ history }) => (
+  const AboutCard = withRouter(({history}) => (
+      <ICard title="About me" colorStyle={aboutStyle} onClick={() => history.push('/about')}>
+        <PortraitIcon className={classes.cardImg}/>
+      </ICard>
+    )),
+    AndroidCard = withRouter(({history}) => (
       <ICard title="Android apps" colorStyle={appsStyle} onClick={() => history.push('/about')}>
         <AndroidIcon className={classes.cardImg}/>
       </ICard>
     )),
-    ContactCard = withRouter(({ history }) => (
+    ContactCard = withRouter(({history}) => (
       <ICard title="Contact" colorStyle={contactStyle} onClick={() => history.push('/about')}>
         <CommentIcon className={classes.cardImg}/>
       </ICard>

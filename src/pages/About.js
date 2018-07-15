@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import {withStyles} from '@material-ui/core/styles';
 import TitleBar from '../components/TitleBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -15,10 +15,10 @@ const styles = theme => ({
 
 class About extends Component {
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     return (
       <React.Fragment>
-        <CssBaseline />
+        <CssBaseline/>
         <div className={classes.about}>
           <TitleBar {...this.props}/>
         </div>

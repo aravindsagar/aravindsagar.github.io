@@ -8,18 +8,13 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+    height: 'auto',
   },
 
   bigAvatar: {
     width: 90,
     height: 90,
     margin: 20,
-  },
-
-  avatar: {
-    padding: 0,
-    margin: 0
   },
 
   socialRoot: {
@@ -42,7 +37,7 @@ const styles = theme => ({
 class TitleBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 };
+    this.state = {width: 0, height: 0};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -56,11 +51,11 @@ class TitleBar extends Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({width: window.innerWidth, height: window.innerHeight});
   }
 
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     return (
       <div className={classes.root}>
         <AppBar position="static" color="default">
@@ -74,8 +69,8 @@ class TitleBar extends Component {
               <Typography variant="title" color="inherit" className={classes.title}>
                 Aravind Sagar
               </Typography>
-              { this.state.width > 600 &&
-              <Typography variant="subtitle" color="inherit" >
+              {this.state.width > 600 &&
+              <Typography variant="subheading" color="inherit">
                 Master's student at University of Illinois, Urbana-Champaign
               </Typography>
               }

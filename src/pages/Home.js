@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import {withStyles} from '@material-ui/core/styles';
 import TitleBar from '../components/TitleBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import IndexCards from '../components/IndexCards';
@@ -9,7 +9,6 @@ const styles = theme => ({
     display: "flex",
     flexFlow: "column",
     minHeight: "100%",
-    flex: 1,
     backgroundImage: 'url("/static/images/bg.png")',
     backgroundRepeat: "repeat",
   }
@@ -17,13 +16,13 @@ const styles = theme => ({
 
 class Home extends Component {
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     return (
       <React.Fragment>
         <CssBaseline/>
         <div className={classes.home}>
           <TitleBar {...this.props}/>
-          <IndexCards />
+          <IndexCards/>
         </div>
       </React.Fragment>
     );
