@@ -9,6 +9,7 @@ const styles = theme => ({
     display: "flex",
     flexFlow: "column",
     minHeight: "100%",
+    height: 'auto',
     backgroundImage: 'url("/static/images/bg.png")',
     backgroundRepeat: "repeat",
   }
@@ -20,8 +21,8 @@ class Home extends Component {
     return (
       <React.Fragment>
         <CssBaseline/>
+        <TitleBar/>
         <div className={classes.home}>
-          <TitleBar {...this.props}/>
           <IndexCards/>
         </div>
       </React.Fragment>

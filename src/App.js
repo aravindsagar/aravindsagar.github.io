@@ -8,8 +8,9 @@ const styles = theme => ({
   app: {
     minHeight: "100%",
     flex: 1,
+    height: 'auto',
     fontFamily: "sans-serif",
-  }
+  },
 });
 
 class App extends Component {

@@ -11,12 +11,13 @@ import {withRouter} from "react-router-dom";
 
 const styles = theme => ({
   cardRoot: {
-    height: "100%",
+    minHeight: "100%",
     display: "flex",
     flexFlow: "row wrap",
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
+    height: 'auto',
   },
 
   card: {
